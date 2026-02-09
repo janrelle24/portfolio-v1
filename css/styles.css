@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg-color: #0d1117;
+    --text-color: #c9d1d9;
+    --accent-color: #00ff9c;
+    --accent-glow: rgba(0, 255, 156, 0.6);
+    --muted-text: #8b949e;
+    --card-color: #161b22;
+}
+
+body{
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header{
+    border-bottom: 1px solid #21262d;
+}
+.navbar{
+    max-width: 1100px;
+    margin: auto;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px var(--accent-glow);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+.logo i{
+    font-size: 2rem;
+}
+
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+.nav-links a{
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 0.95rem;
+    position: relative;
+}
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+.nav-links a:hover::after {
+    width: 100%;
+}
+/*intro section*/
+.intro {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+.intro h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid var(--accent-color);
+    width: 0;
+    animation:
+        typing 2.2s steps(22, end) forwards,
+        blink 0.8s step-end infinite;
+}
+
+.subtitle {
+    color: var(--muted-text);
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 2.6s;
+}
+
+/*buttons*/
+.intro-btns {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.btn {
+    padding: 0.75rem 1.6rem;
+    border: 1px solid var(--accent-color);
+    color: var(--bg-color);
+    background: var(--accent-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px var(--accent-glow);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s ease forwards;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px var(--accent-glow);
+}
+/* Outline Button */
+.btn-outline {
+    background: transparent;
+    color: var(--accent-color);
+}
+
+.btn-outline:hover {
+    background: var(--accent-color);
+    color: var(--bg-color);
+}
+.intro-btns .btn:nth-child(1) {
+    animation-delay: 3.0s;
+}
+
+.intro-btns .btn:nth-child(2) {
+    animation-delay: 3.2s;
+}
+
+/* Adjust steps count if text changes */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 22ch }
+}
+/* Cursor blink animation */
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+/* Fade + slide up */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
