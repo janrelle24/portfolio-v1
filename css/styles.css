@@ -162,11 +162,12 @@ header{
         transform: translateY(0);
     }
 }
-/*about section design*/
-.about{
+/*main section design*/
+.main-section{
     background: var(--card-color);
     padding: 5rem 2rem;
 }
+/*about container design*/
 .about-container{
     max-width: 1100px;
     margin: auto;
@@ -311,4 +312,117 @@ header{
         var(--accent-color),
         transparent
     );
+}
+/*projects section*/
+.projects-container{
+    max-width: 1100px;
+    margin: auto;
+}
+/*section title*/
+.section-title{
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: var(--accent-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    text-shadow: 0 0 10px var(--accent-glow);
+}
+/*grid*/
+.projects-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+/* Project Card */
+.project-card{
+    background: var(--bg-color);
+    border: 1px solid #21262d;
+    border-radius: 8px;
+    padding: 2rem;
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.project-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--accent-color),
+        transparent
+    );
+}
+/* Hover */
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px rgba(0, 255, 156, 0.15);
+}
+/* Title */
+.project-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+/* Description */
+.project-card p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+/* Tech stack */
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1.8rem;
+}
+.project-tech span {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 20px;
+    color: var(--accent-color);
+    background: rgba(0, 255, 156, 0.05);
+}
+.project-tech i{
+    font-size: 1rem;
+}
+.project-tech span:hover i {
+    text-shadow: 0 0 10px currentColor;
+}
+.fa-html5 {
+    color: #e34f26;
+}
+
+.fa-css3-alt {
+    color: #1572b6;
+}
+
+.fa-js {
+    color: #f7df1e;
+}
+
+.fa-node-js {
+    color: #3c873a;
+}
+
+.fa-database {
+    color: #4db33d; /* MongoDB green vibe */
+}
+/* Links */
+.project-links {
+    display: flex;
+    gap: 1rem;
+}
+.project-links .btn {
+    font-size: 0.8rem;
+    padding: 0.5rem 1.2rem;
 }
