@@ -6,6 +6,7 @@
     <title>My Contacts</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
     <header>
@@ -68,7 +69,7 @@
         
                     <div class="contact-item">
                         <i class="fa-solid fa-location-dot"></i>
-                        <span>Philippines</span>
+                        <span>P-2 Victory Tubay Agusan del Norte, Philippines</span>
                     </div>
         
                     <div class="social-links">
@@ -82,17 +83,20 @@
                 <div class="contact-card">
                     <h3><i class="fa-solid fa-terminal"></i> Send Message</h3>
         
-                    <form class="contact-form">
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <textarea rows="5" placeholder="Your Message" required></textarea>
+                    <form class="contact-form" id="contact-form">
+                        <input type="text" name="user_name" placeholder="Your Name" required>
+                        <input type="email" name="user_email" placeholder="Your Email" required>
+                        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
                         <button type="submit" class="btn">Send Message</button>
+                        <!-- Message box -->
+                        <div id="form-message" class="form-message"></div>
                     </form>
                 </div>
         
             </div>
         </div>
         
+        <script src="js/contact.js"></script>
     </section>
 </body>
 </html>
