@@ -38,24 +38,22 @@ function prevSlide() {
 
 /* Auto slide */
 function startAutoSlide() {
+    if (interval) return;
     interval = setInterval(nextSlide, 5000);
 }
 
 function stopAutoSlide() {
     clearInterval(interval);
+    interval = null;
 }
 
 /* Button events */
 nextBtn.addEventListener("click", () => {
-    stopAutoSlide();
     nextSlide();
-    startAutoSlide();
 });
 
 prevBtn.addEventListener("click", () => {
-    stopAutoSlide();
     prevSlide();
-    startAutoSlide();
 });
 
 /* Pause on hover */

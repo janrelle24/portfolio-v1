@@ -33,7 +33,7 @@ header{
     justify-content: space-between;
     align-items: center;
 }
-
+/*
 .logo{
     color: var(--accent-color);
     font-size: 1.5rem;
@@ -43,9 +43,47 @@ header{
     align-items: center;
     gap: 0.6rem;
 }
-.logo i{
-    font-size: 2rem;
+.logo a{
+    text-decoration: none;
 }
+.logo a i{
+    font-size: 2rem;
+}*/
+/* Logo container */
+.logo {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+/* Link inside logo */
+.logo a {
+    color: var(--accent-color);             /* Neon green color */
+    text-decoration: none;                  /* Remove underline */
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-shadow: 0 0 10px var(--accent-glow);
+    transition: all 0.3s ease;
+}
+
+/* Icon inside logo */
+.logo a i {
+    font-size: 2rem;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.logo a:hover {
+    text-shadow: 0 0 20px var(--accent-glow), 0 0 10px #fff;
+}
+
+.logo a:hover i {
+    transform: rotate(-15deg) scale(1.1);   /* small icon rotation + scale */
+}
+
 
 .nav-links{
     list-style: none;
@@ -330,6 +368,42 @@ header{
     gap: 0.8rem;
     text-shadow: 0 0 10px var(--accent-glow);
 }
+.project-description {
+    max-width: 850px;
+    margin: 0 auto 3rem auto; /* center + spacing below */
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--muted-text);
+    padding: 1.5rem 2rem;
+    border: 1px solid #21262d;
+    border-radius: 8px;
+    background: rgba(0, 255, 156, 0.03);
+    position: relative;
+}
+
+/* Subtle glowing top line */
+.project-description::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--accent-color),
+        transparent
+    );
+}
+
+/* Slight hover glow effect */
+.project-description:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 156, 0.08);
+    transition: 0.3s ease;
+}
 /*grid*/
 .projects-grid{
     /*display: grid;*/
@@ -382,21 +456,14 @@ header{
     margin: 12px 0;
     object-fit: cover;
 }
-/*
-.project-image {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin: 12px 0;
-}*/
+
 .project-card:hover .project-image {
     transform: scale(1.03);
     transition: transform 0.3s ease;
 }
 /* Description */
 .project-card p {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: var(--text-color);
     margin-bottom: 1.5rem;
     line-height: 1.6;
@@ -510,3 +577,214 @@ header{
 .project-next:active {
     transform: translateY(-50%) scale(0.95);
 }
+/* Skills Container */
+.skills-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Description */
+.skills-description {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+    color: var(--muted-text);
+    line-height: 1.8;
+}
+
+/* Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+/* Skill Card */
+.skill-card {
+    background: var(--bg-color);
+    border: 1px solid #21262d;
+    border-radius: 8px;
+    padding: 2rem;
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Top glow line */
+.skill-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--accent-color),
+        transparent
+    );
+}
+
+/* Hover effect */
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px rgba(0, 255, 156, 0.15);
+}
+
+/* Card Title */
+.skill-card h3 {
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+/* Skill Items */
+.skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.skill-items span {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    background: rgba(0, 255, 156, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Icon hover glow */
+.skill-items span:hover i {
+    text-shadow: 0 0 10px currentColor;
+}
+/* Contact Container */
+.contact-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Description */
+.contact-description {
+    max-width: 750px;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+    color: var(--muted-text);
+    line-height: 1.8;
+}
+
+/* Grid */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+/* Contact Card */
+.contact-card {
+    background: var(--bg-color);
+    border: 1px solid #21262d;
+    border-radius: 8px;
+    padding: 2rem;
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Top glow line */
+.contact-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--accent-color),
+        transparent
+    );
+}
+
+/* Hover */
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px rgba(0, 255, 156, 0.15);
+}
+
+/* Card Title */
+.contact-card h3 {
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+/* Contact Items */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.contact-item i {
+    color: var(--accent-color);
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--accent-color);
+    transition: 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+/* Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background: var(--card-color);
+    border: 1px solid #21262d;
+    padding: 0.8rem;
+    color: var(--text-color);
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
