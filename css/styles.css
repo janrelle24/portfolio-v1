@@ -332,9 +332,11 @@ header{
 }
 /*grid*/
 .projects-grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /*display: grid;*/
+    display: flex;
     gap: 2.5rem;
+    transition: transform 0.6s ease-in-out;
+    will-change: transform;
 }
 /* Project Card */
 .project-card{
@@ -344,6 +346,7 @@ header{
     padding: 2rem;
     position: relative;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
+    min-width: calc((100% - 5rem) / 3);
 }
 .project-card::before {
     content: "";
@@ -369,6 +372,27 @@ header{
     font-size: 1.1rem;
     margin-bottom: 1rem;
     color: var(--accent-color);
+}
+/*image*/
+
+.project-image{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 12px 0;
+    object-fit: cover;
+}
+/*
+.project-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 12px 0;
+}*/
+.project-card:hover .project-image {
+    transform: scale(1.03);
+    transition: transform 0.3s ease;
 }
 /* Description */
 .project-card p {
@@ -425,4 +449,64 @@ header{
 .project-links .btn {
     font-size: 0.8rem;
     padding: 0.5rem 1.2rem;
+}
+/*carousel*/
+.project-carousel{
+    /*position: relative;*/
+    overflow: hidden;
+    position: relative;
+}
+/* Shared styles */
+.project-previous,
+.project-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(13, 17, 23, 0.8);
+    border: 1px solid var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 5;
+    box-shadow: 0 0 15px var(--accent-glow);
+    transition: 
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+/* Positioning */
+.project-previous {
+    left: -25px;
+}
+
+.project-next {
+    right: -25px;
+}
+/* Icon */
+.project-previous i,
+.project-next i {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+/* Hover effects */
+.project-previous:hover,
+.project-next:hover {
+    background: var(--accent-color);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 30px var(--accent-glow);
+}
+
+.project-previous:hover i,
+.project-next:hover i {
+    color: var(--bg-color);
+}
+
+/* Active (click) feedback */
+.project-previous:active,
+.project-next:active {
+    transform: translateY(-50%) scale(0.95);
 }
