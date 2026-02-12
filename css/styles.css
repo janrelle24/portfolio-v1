@@ -109,6 +109,15 @@ header{
 .nav-links a:hover::after {
     width: 100%;
 }
+/*active nav-link*/
+.nav-links a.active{
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--accent-glow);
+}
+/* Underline effect when active */
+.nav-links a.active::after {
+    width: 100%;
+}
 /*intro section*/
 .intro {
     min-height: 90vh;
@@ -368,7 +377,7 @@ header{
     gap: 0.8rem;
     text-shadow: 0 0 10px var(--accent-glow);
 }
-.project-description {
+.description {
     max-width: 850px;
     margin: 0 auto 3rem auto; /* center + spacing below */
     text-align: center;
@@ -383,7 +392,7 @@ header{
 }
 
 /* Subtle glowing top line */
-.project-description::before {
+.description::before {
     content: "";
     position: absolute;
     top: 0;
@@ -400,7 +409,7 @@ header{
 }
 
 /* Slight hover glow effect */
-.project-description:hover {
+.description:hover {
     box-shadow: 0 0 20px rgba(0, 255, 156, 0.08);
     transition: 0.3s ease;
 }
@@ -583,15 +592,6 @@ header{
     margin: auto;
 }
 
-/* Description */
-.skills-description {
-    max-width: 800px;
-    margin: 0 auto 3rem auto;
-    text-align: center;
-    color: var(--muted-text);
-    line-height: 1.8;
-}
-
 /* Grid */
 .skills-grid {
     display: grid;
@@ -667,15 +667,6 @@ header{
 .contact-container {
     max-width: 1100px;
     margin: auto;
-}
-
-/* Description */
-.contact-description {
-    max-width: 750px;
-    margin: 0 auto 3rem auto;
-    text-align: center;
-    color: var(--muted-text);
-    line-height: 1.8;
 }
 
 /* Grid */
