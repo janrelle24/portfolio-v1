@@ -456,6 +456,12 @@ header{
     margin-bottom: 1rem;
     color: var(--accent-color);
 }
+.project-type{
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--muted-text);
+    margin-bottom: 10px;;
+}
 /*image*/
 
 .project-image{
@@ -464,6 +470,23 @@ header{
     border-radius: 10px;
     margin: 12px 0;
     object-fit: cover;
+}
+.project-summary{
+    margin: 15px 0;
+    line-height: 1.6;
+}
+.project-features {
+    margin: 10px 0;
+    padding-left: 18px;
+}
+.project-features li {
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+}
+.project-learned {
+    font-size: 0.9rem;
+    margin: 10px 0;
+    color: #444;
 }
 
 .project-card:hover .project-image {
