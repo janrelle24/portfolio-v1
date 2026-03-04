@@ -1,17 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
     const links = document.querySelectorAll(".nav-links a");
 
-    const currentPage = window.location.pathname.split("/").pop();
+    const currentPath = window.location.pathname;
 
-    // Fix for homepage
-    if (currentPage === "") {
-        currentPage = "index.html";
-    }
-    
     links.forEach(link => {
-        const linkPage = link.getAttribute("href");
+        const linkPath = new URL(link.href).pathname;
 
-        if(linkPage === currentPage){
+        if (linkPath === currentPath) {
             link.classList.add("active");
         }
     });
