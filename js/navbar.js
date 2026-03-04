@@ -3,6 +3,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const currentPage = window.location.pathname.split("/").pop();
 
+    // Fix for homepage
+    if (currentPage === "") {
+        currentPage = "index.html";
+    }
+    
     links.forEach(link => {
         const linkPage = link.getAttribute("href");
 
