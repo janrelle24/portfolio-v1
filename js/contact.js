@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function (){
         )
         .then(function () {
             //show success message
-            formMessage.textContent = "Message sent successfully, it direct to my email account! ";
+            formMessage.textContent = "Message sent successfully! ";
             formMessage.classList.remove("error");
             formMessage.classList.add("success");
 
