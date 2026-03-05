@@ -290,6 +290,66 @@ header{
     transform: scale(1.05);
     box-shadow: 0 0 40px var(--accent-glow);
 }
+/* Wrapper */
+.image-wrapper {
+    position: relative;
+    max-width: 280px;
+    /*margin-top: 80px;*/
+    cursor: pointer;
+}
+/* Cropped default */
+.reveal-img {
+    width: 100%;
+    height: 120px; /* 1/4 visible */
+    object-fit: cover;
+    object-position: top;
+    border-radius: 10px;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 25px var(--accent-glow);
+    transition: height 0.5s ease;
+}
+/* Expanded */
+.reveal-img.active {
+    height: 380px;
+}
+
+/* Overlay */
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(13, 17, 23, 0.6);
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    text-align: center;
+
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+/* Icon style */
+.image-overlay i {
+    font-size: 1.2rem;
+}
+
+/* Hover glow */
+.image-wrapper:hover .image-overlay {
+    background: rgba(13, 17, 23, 0.75);
+}
+
+/* Hide overlay when expanded */
+.reveal-img.active + .image-overlay {
+    opacity: 0;
+    pointer-events: none;
+}
 /* Text side */
 .about-text h2 {
     font-size: 2rem;
@@ -304,6 +364,7 @@ header{
     margin-bottom: 1rem;
     color: var(--text-color);
     line-height: 1.7;
+    text-align: justify;
 }
 
 .about-text span {
@@ -385,6 +446,7 @@ header{
     border-radius: 8px;
     background: rgba(0, 255, 156, 0.03);
     position: relative;
+    text-align: justify;
 }
 
 /* Subtle glowing top line */
@@ -969,6 +1031,9 @@ header{
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
+    }
+    .about-text h2{
+        justify-content: center;
     }
 
     .projects-grid {
